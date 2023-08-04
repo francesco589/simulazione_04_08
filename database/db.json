@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "text": "ciao carooooo",
+      "name": "francscii",
+      "date": "2023-08-04T16:11:46.865Z",
+      "id": 1
+    },
+    {
+      "text": "hello",
+      "name": "gyugugu",
+      "date": "2023-08-04T16:07:43.580Z",
+      "id": 2
+    }
+  ]
+}
