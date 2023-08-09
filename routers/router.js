@@ -6,7 +6,10 @@ router.get('/', Controller.renderHome)
 
 router.post('/api/tweet', Controller.addTweet)
 
-router.delete('/delete', Controller.deleteTweet)
+router.delete('/delete/:id', Controller.deleteTweet)
 
+router.get('/edit/:id', Controller.editTweet)
+
+router.patch('/editone/:id', Controller.editOne)
 
 export default router
