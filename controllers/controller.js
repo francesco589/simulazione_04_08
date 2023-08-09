@@ -12,10 +12,9 @@ class Controller{
     }
 
     static async deleteTweet(req, res){
-        const id = parseint(req.params.id)
-       const resp = await axios.delete('http://localhost:3008/posts' + id)
+        const id = req.params.id
+       const resp = await axios.delete('http://localhost:3008/posts/' + id)
        res.json(resp.data)
-       res.redirect('/')
     }
 
     static async addTweet(req, res){

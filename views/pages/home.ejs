@@ -56,7 +56,7 @@
                         </p>
                         <div class="flex justify-between p-2">
                             <a href='edit/<%= post.id %>' id="edit-btn">
-                                
+
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -65,30 +65,29 @@
 
                             </a>
                             <button id="del-Btn">
-                                <input value='delete/<%=post.id%>' type="text" class="hidden">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                             </button>
                         </div>
+                        <script key='<%=post.id%>'>
+
+                            const delBtn = document.getElementById('del-Btn')
+                            delBtn.addEventListener('click', async (e) => {
+                                const url = 'delete/<%=post.id%>'
+                                console.log(url);
+                                await axios.delete(url)
+                                setTimeout(location.reload(),4000)
+                                
+                            })
+                        </script>
                     </div>
                 </div>
                 <% }); %>
         </section>
 
     </section>
-    <script>
-        const $ = (id) => document.getElementById(id)
-        const edit = $('edit-btn')
-        const del = $('del-Btn')
-        del.addEventListener('click', async (e) => {
-            const url = e.target.value
-            console.log(url);
-            await axios.delete(url)
-
-        })
-    </script>
 </body>
 
 </html>
